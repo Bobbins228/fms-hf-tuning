@@ -11,7 +11,7 @@ on:
 env:
   REPO_NAME: rhoai-additional-images
   REPO_OWNER: Bobbins228
-  GITHUB_TOKEN: ${{ secrets.github_token }}
+  GITHUB_TOKEN: ${{ secrets.CODEFLARE_MACHINE_ACCOUNT_TOKEN }}
   RHOAI_VERSION: ${{ github.event.inputs.rhoai-release-version }}
   UPDATE_BRANCH: rhoai-${{ github.event.inputs.rhoai-release-version }}-add-fms-hf-image
   IMAGE_BASE: modh
