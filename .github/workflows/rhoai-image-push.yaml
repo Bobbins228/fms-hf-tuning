@@ -45,6 +45,7 @@ jobs:
       - name: Update image list
         run: |
           echo "Creating updated image list Pull Request"
+          cd $REPO_NAME
           git checkout -b $UPDATE_BRANCH
           export IMAGE_SHA=$(podman pull --quiet quay.io/$IMAGE_BASE/$IMAGE_REPO:release)
 
