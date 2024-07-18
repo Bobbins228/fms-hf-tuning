@@ -60,6 +60,7 @@ jobs:
           git add .
           git commit -am "Updated rhoai-disconnected-images.yaml with latest fms-hf-tuning release image" --signoff
           git push origin $UPDATE_BRANCH
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$REPO_OWNER/$REPO_NAME.git
 
       - name: Create Pull Request
         run: |
