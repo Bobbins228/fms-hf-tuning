@@ -67,8 +67,8 @@ jobs:
           cd $REPO_NAME
           gh pr create --repo $REPO_OWNER/$REPO_NAME \
             --title "$PR_TITLE" \
-            --body "$PR_BODY"
-            --head "$REPO_OWNER:$UPDATE_BRANCH"
+            --body "$PR_BODY" \
+            --head "$REPO_OWNER:$UPDATE_BRANCH" \
             --base "rhoai-$RHOAI_VERSION"
         env:
           PR_TITLE: "Update rhoai-disconnected-images.yaml with latest fms-hf-tuning release image"
