@@ -27,6 +27,7 @@ jobs:
         with:
           repository: 'Bobbins228/rhoai-additional-images'
           ref: rhoai-${{ github.event.inputs.rhoai-release-version }}
+          token: ${{ secrets.CODEFLARE_MACHINE_ACCOUNT_TOKEN }}
       - name: Login to Quay.io
         uses: redhat-actions/podman-login@v1
         with:
@@ -45,8 +46,6 @@ jobs:
           echo "Creating updated image list Pull Request"
           git config --global user.email "markcampbell114@gmail.com"
           git config --global user.name "Bobbins228"
-          pwd
-          ls
           git checkout -b $UPDATE_BRANCH
           # Update the image list to include the fms-hf-tuning release image
           sed -i "/additional-images:/a\- quay.io/$IMAGE_BASE/$IMAGE_REPO@sha256:${IMAGE_SHA}" rhoai-disconnected-images.yaml
