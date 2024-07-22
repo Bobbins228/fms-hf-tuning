@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
+        with:
+          repository: '$REPO_OWNER/$REPO_NAME'
       - name: Login to Quay.io
         uses: redhat-actions/podman-login@v1
         with:
