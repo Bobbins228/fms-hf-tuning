@@ -42,7 +42,8 @@ jobs:
           echo "Creating updated image list Pull Request"
           git config --global user.email "markcampbell114@gmail.com"
           git config --global user.name "Bobbins228"
-          
+          pwd
+          ls
           git checkout -b $UPDATE_BRANCH
           # Update the image list to include the fms-hf-tuning release image
           sed -i "/additional-images:/a\- quay.io/$IMAGE_BASE/$IMAGE_REPO@sha256:${IMAGE_SHA}" rhoai-disconnected-images.yaml
